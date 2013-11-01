@@ -1,0 +1,10 @@
+.bsa.well.debug-area.hidden
+  span.debug.btn.btn-danger.btn-sm#debug-action
+    | Debug
+  .debug-area#debug-target
+    .debug
+      - if defined? current_player and current_player
+        | User: 
+        = current_player.name 
+    #semaphor
+    #footnotes_holder

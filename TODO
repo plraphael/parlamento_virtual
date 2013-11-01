@@ -1,0 +1,4 @@
+# Débito Técnico 
+* Callbacks de erro do login do facebook não são tratados.
+  * não só de erros, se o cara ja estiver conectado no facebook tambem
+* User message is missing some thing we do not really now how to do 

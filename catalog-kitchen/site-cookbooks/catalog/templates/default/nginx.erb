@@ -1,0 +1,31 @@
+upstream puma {
+  server unix:/var/run/<%= @server_name %>/puma.sock fail_timeout=0;
+}
+
+server {
+  listen 80;
+  server_name '<%= @server_name %>';
+  root /home/rails/www/<%= @server_name %>/public;
+  # set far-future expiration headers on static content
+  expires max;
+
+  server_tokens off;
+
+  # set up the rails servers as a virtual location for use later
+   location @puma {
+     proxy_set_header Host $host;
+     proxy_set_header X-Real-IP  $remote_addr;
+     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+     proxy_set_header X-Forwarded-Proto $scheme;
+     proxy_intercept_errors on;
+     proxy_redirect off;
+     proxy_pass http://puma;
+     expires off;
+   }
+   
+   location / {
+     try_files $uri @puma;
+   }
+
+   error_page 500 502 503 504 /500.html;
+}

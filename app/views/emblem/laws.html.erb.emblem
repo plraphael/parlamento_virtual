@@ -1,0 +1,20 @@
+each model
+  .law-box
+    .title
+      = title
+      .state
+        = state
+        = type
+    .row.law-contents
+      .col-sm-8
+        .excerpt
+          = excerpt
+      .col-sm-4
+        = partial vote_count
+    .row.status-contents
+      .col-sm-8
+        span.events 
+          | ({{ playerState }})
+      .col-sm-4
+        span.action
+          = linkTo "law" this classNames="btn btn-primary btn-sm" | Participar

@@ -1,0 +1,9 @@
+.container
+  h1 New admin_law
+  .row
+    .col-md-6
+      == render 'form'
+    .col-md-6
+      == render template: 'admin/real_laws/show'
+
+  = link_to 'Back', admin_laws_path

@@ -1,0 +1,32 @@
+= render game
+#brasil
+  .header
+    .row
+      .col-sm-10.col-sm-offset-1
+        .portal_logo
+          h1
+            | Parlamento Virtual
+      .congress
+  .about
+    .row
+      .col-sm-10.col-sm-offset-1
+        = render menu
+= render elect
+.container
+  = outlet
+.row
+  .col-sm-12
+    .footer
+    .footer-lake
+      .row
+        .col-sm-10.col-sm-offset-1
+          | Ola Footer
+          | Colocar graphycons
+
+/ .header-box.container
+/   .row
+/     .col-sm-10.col-sm-offset-1
+/       <%= image_tag "logo.png" %>
+/.navigation-box
+
+

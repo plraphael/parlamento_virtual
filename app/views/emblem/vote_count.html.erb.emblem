@@ -1,0 +1,13 @@
+.highlights
+  span.number
+    = votesFor
+  | à favor
+  br
+  span.number
+    = votesAgainst
+  | contra
+  br
+  span.number
+    = proposals.length
+  | propostas
+  br

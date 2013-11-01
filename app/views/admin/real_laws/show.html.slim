@@ -1,0 +1,21 @@
+.container
+  p#notice = notice
+
+  h1 Admin Real Law
+  .row
+    .col-md-6
+      .page-header
+        .h2 Real Law
+      == render 'show'
+    .col-md-6
+      .page-header
+        .h2 Law
+      == render template: 'admin/laws/_form'
+  .row
+    .col-md-12
+      br
+      .text-center
+        = link_to 'Edit', edit_admin_real_law_path(@admin_real_law)
+        '&nbsp;|
+        = link_to 'Back', admin_real_laws_path
+      br

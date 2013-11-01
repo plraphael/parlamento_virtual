@@ -1,0 +1,28 @@
+# Cheffile
+#!/usr/bin/env ruby
+#^syntax detection
+
+site 'http://community.opscode.com/api/v1'
+
+cookbook 'user'
+cookbook 'nginx'
+cookbook 'simple_iptables'
+cookbook 'rvm', :git => "git://github.com/fnichol/chef-rvm.git"
+cookbook 'fail2ban'
+cookbook 'apt'
+cookbook 'build-essential'
+cookbook 'memcached'
+cookbook 'puma'
+
+# == OK Esse deploy funciona, mas falta configurar uma par de coisas entre elas
+# - Servidor nginx
+# - iniciar o rails usando servidor puma
+# 
+# == Configurações do ubuntu ou feitas na mão que não estão no script
+# DOKKU wget -qO- https://raw.github.com/progrium/dokku/master/bootstrap.sh | sudo 
+# Deactivate ssh for people who do not have key
+# Ubuntu users and permissions
+# descobrir o que são certas coisas do chef que eu sei lá percona, fail2ban
+#
+# == Algumas referencias
+#  http://janitor.se/blog/2013/05/22/deploying-a-rails-plus-solr-plus-unicorn-plus-nginx-application-with-chef-plus-knife-plus-capistrano-on-digital-ocean-1/

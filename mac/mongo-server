@@ -1,0 +1,2 @@
+mongod &
+tail -f /usr/local/var/log/mongodb/mongo.log

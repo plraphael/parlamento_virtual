@@ -1,0 +1,10 @@
+#!/bin/bash
+
+alias gitmp='git checkout master; git pull'
+
+function gitrb {
+  git checkout $1;
+  git rebase -i master && \
+  git checkout master && \
+  git merge $1;
+}

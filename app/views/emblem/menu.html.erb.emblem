@@ -1,0 +1,6 @@
+.row
+  .col-sm-12
+    each menu
+      span.navmenu
+        a href=route class="btn btn-xs"
+          | {{title}}

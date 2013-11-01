@@ -1,0 +1,9 @@
+doctype html
+head
+  title Virtualcongress
+  = stylesheet_link_tag "application", media: "all"
+  = csrf_meta_tags
+body
+  = render 'layouts/debug' if Rails.env.development?
+  = yield
+  = javascript_include_tag "admin"

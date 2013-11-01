@@ -1,0 +1,29 @@
+h1 Listing Laws
+
+table.table.table-hover
+  tr
+    th Title
+    th Type
+    th Excerpt
+    th Description
+    th State
+    th Real law
+    th
+    th
+    th
+
+  - @admin_laws.each do |admin_law|
+    tr
+      td = admin_law.title
+      td = admin_law.type
+      td = admin_law.excerpt
+      td = admin_law.description
+      td = admin_law.state
+      td = link_to admin_law.real_law.name, admin_real_law_path(admin_law.real_law)
+      td = link_to 'Show', admin_law_path(admin_law)
+      td = link_to 'Edit', edit_admin_law_path(admin_law)
+      td = link_to 'Destroy', admin_law_path(admin_law), :confirm => 'Are you sure?', :method => :delete
+
+br
+
+= link_to 'New Law (choose Real Law)', admin_real_laws_path

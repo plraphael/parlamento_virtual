@@ -1,0 +1,23 @@
+h1 Listing proposals
+
+table
+  tr
+    th Description
+    th Votes in favor
+    th Votes against
+    th
+    th
+    th
+
+  - @proposals.each do |proposal|
+    tr
+      td = proposal.description
+      td = proposal.votes_in_favor
+      td = proposal.votes_against
+      td = link_to 'Show', proposal
+      td = link_to 'Edit', edit_proposal_path(proposal)
+      td = link_to 'Destroy', proposal, :confirm => 'Are you sure?', :method => :delete
+
+br
+
+= link_to 'New Proposal', new_proposal_path

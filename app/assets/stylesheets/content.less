@@ -1,0 +1,149 @@
+@import "custom_bootstrap/variables";
+
+.state{
+ 
+}
+
+.footer{
+  background-image: image-url('congresso.png');
+  background-size: cover;
+  height: 596px;
+}
+
+.footer-lake{
+  background-image: image-url('lake.png');
+  background-size: cover;
+  height: 244px;
+  color: @bsb-white;
+}
+
+.navbar li a.active{
+  color: @link-color;
+}
+
+.law-box{
+  border: 1px solid @bsb-gray;
+  padding: 4px 0 0 0;
+  margin-top: 32px;
+  padding-bottom: 1px;
+  padding-right: 1px;
+
+  .title, .excerpt, .status{
+    padding: 0 4px;
+  }
+
+  .title{
+    border-bottom: 1px solid lighten(@bsb-gray, 10%);
+    font-family: "Open Sans";
+    font-weight: 700;
+    font-size: 20px;
+    height: 32px;
+  }
+
+  .state{
+    font-size: 16px;    
+    float: right;
+    border: 1px solid @bsb-gray;
+    padding: 4px;
+    height: 38px;
+    width: 100px;
+    position: relative;
+    top: -22px;
+    z-index: 1;
+    text-align: center;
+    background-color: @bsb-white;
+  } 
+
+  .excerpt{
+    font-family: "EB Garamond", serif;
+    padding-top: 1px;
+    padding-bottom: 15px;
+  } 
+
+  .status-contents{
+    border-top: 1px solid @bsb-gray;
+    margin: -2px;
+    margin-top: -1px;
+
+    .col-sm-4{
+      padding: 0;
+    }
+
+    .col-sm-8{
+      padding: 4px 4px 4px 7px;
+    }
+
+    span.action{
+      float:right;
+      a{
+        width: 150px;
+      }
+    }
+  }
+}
+
+.header-box{
+  padding-top: 6px;
+}
+
+.navigation-box{
+  border-top: 2px solid @bsb-green;
+  border-bottom: 2px solid @bsb-green;
+  background-color: @bsb-green-lighter;
+  height: 30px;
+  width: 100%;
+}
+
+span.navmenu{
+    margin: 4px 6px 4px 0;
+    display: inline-block;
+}
+
+.recoil{
+  margin-top: -32px;
+}
+
+.separator{
+    border-right: 1px solid @bsb-gray;
+}
+
+.law-content{
+  margin-top: 4px;
+
+  section{
+    font-family: "EB Garamond"
+  }
+  p.title{
+    
+  }
+}
+
+.highlights{
+  border: 1px solid @bsb-gray;
+  padding: 4px;
+  margin-right: 4px;
+  height: 100%;
+  display: block;
+  margin-bottom: 12px;
+} 
+
+span.number{
+    border: 1px solid @bsb-gray;
+    margin: 4px 6px 4px 3px;
+    display: inline-block;
+    padding: 5px 9px;
+}
+
+.proposals{
+  border-top: 1px solid @bsb-gray;
+  margin-top: 5px;
+}
+
+form.proposition{
+  margin-top: 10px
+}
+
+input.propose_action{
+  float: right;
+  margin-top: 8px;
+}

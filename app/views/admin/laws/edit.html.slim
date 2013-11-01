@@ -1,0 +1,12 @@
+.container
+
+  h1 Editing admin_law
+
+  == render 'form'
+
+  br
+  .text-center
+    = link_to 'Show', admin_law_path(@admin_law)
+    '&nbsp;|
+    = link_to 'Back', admin_laws_path
+  br

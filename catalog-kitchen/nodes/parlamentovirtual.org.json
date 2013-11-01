@@ -1,0 +1,10 @@
+{
+  "new_relic": {
+    "app_name" : "parlamentovirtual.org"
+  },
+  "server_name": "parlamentovirtual.org",
+  "run_list": [
+    "recipe[catalog::requirements]",
+    "recipe[catalog::default]"
+  ]
+}

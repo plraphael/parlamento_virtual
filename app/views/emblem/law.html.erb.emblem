@@ -1,0 +1,60 @@
+article.row
+  .col-sm-8.separator
+      header
+        h2
+          = title
+        h4
+          | {{ proposals.length }} propostas
+      section
+        summary
+          p
+            = excerpt
+        details
+          p 
+            = description
+      author
+        | Who is your author??
+      .proposals
+        p
+          h3
+            i.next
+            | Proponha uma modificação
+        form.proposition submit="propose"
+          .form-group
+            Ember.TextArea valueBinding="new_proposal_message"  classNames="form-control"
+            input type="submit" class={ :btn :btn-primary :propose_action} value="Propor minha modificação"
+        each proposal in proposals
+          p
+            img src=proposal.author_image
+            strong
+              = proposal.author_name
+            br
+            = proposal.description
+  .col-sm-4
+    .state.action-box
+      h2
+        = state
+    aside.action-box
+      = partial vote_count_minimal
+    if controllers.game.isLoggedIn
+      .player.action-box
+        p
+          h3
+            i class={ isDefined:done:edit}
+            | Posição
+          p
+            button click=voteFor class={:btn :btn-success :btn-neutral isFor:active:inactive isDefined:disabled}
+              | Favor
+            button click=voteAgainst class={:btn :btn-danger :btn-neutral isAgainst:active:inactive isDefined:disabled}
+              | Contra
+        p
+          h3
+            i class={ :next canDefine:edit isDefined:done }
+            | Voto
+          button click=define class={:btn :btn-primary canDefine:useless:disabled isDefined:disabled}
+            | Votar Definitivamente
+          if isDefined
+            <% if Rails.env.development? %>
+              button click=reset class={:btn :btn-info }
+                | Development Only Reset
+            <% end %>

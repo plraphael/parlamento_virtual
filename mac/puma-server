@@ -1,0 +1,1 @@
+RAILS_ENV=production; puma -p 9595 -t 8:32 -w 10 --preload      

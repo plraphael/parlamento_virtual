@@ -1,0 +1,24 @@
+p#notice = notice
+
+p
+  strong Title: 
+  = @admin_law.title
+p
+  strong Type: 
+  = @admin_law.type
+p
+  strong Excerpt: 
+  = @admin_law.excerpt
+p
+  strong Description: 
+  = @admin_law.description
+p
+  strong State: 
+  = @admin_law.state
+p
+  strong Real law: 
+  = @admin_law.real_law.name
+
+= link_to 'Edit', edit_admin_law_path(@admin_law)
+'&nbsp;|
+= link_to 'Back', admin_laws_path

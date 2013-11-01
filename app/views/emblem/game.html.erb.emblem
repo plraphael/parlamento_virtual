@@ -1,0 +1,37 @@
+if isLoggedIn
+  #sidebar
+    if showBar
+      #details-area
+        .well.mission-title
+          span.glyphicon.glyphicon-remove-circle.close-button
+          h1 Missões
+        .missions-area
+          each missions
+            .mission-box
+            /= link-to emberUrl text
+            /= link-to url text
+            = mission_type
+            a href="" click=checkin 
+              = text 
+            = completed
+            br
+    #menu-area
+      .well.game-area click=bar
+        = name
+      .well.game-area click=missions
+        h3.notify-menu
+          span.glyphicon.glyphicon-briefcase
+          = missions.length          
+      .well.game-area
+        h3.level-menu
+          span.glyphicon.glyphicon-user
+          = level
+        = view Virtualcongress.ProgressBar pointsBinding="points" goalBinding="goal" baselineBinding="baseline"
+      .well.game-area
+        a.btn.btn-danger.btn-stretch click="logout"
+          | Sair
+      
+      .well.game-area
+        <% if Rails.env.development? %>
+          #stream       
+        <% end %> 

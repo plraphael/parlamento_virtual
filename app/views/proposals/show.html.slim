@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+  strong Description:
+  = @proposal.description
+p
+  strong Votes in favor:
+  = @proposal.votes_in_favor
+p
+  strong Votes against:
+  = @proposal.votes_against
+
+= link_to 'Edit', edit_proposal_path(@proposal)
+'|
+= link_to 'Back', proposals_path

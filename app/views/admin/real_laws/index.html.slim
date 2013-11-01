@@ -1,0 +1,35 @@
+h1 Listing Real Laws
+table.table.table-hover
+  tr
+    th = 'Real ID'
+    th = 'Name'
+    th = 'Type'
+    th = 'Number'
+    th = 'Year'
+    th = 'Proposition date'
+    th = 'Excerpt'
+    th = 'Description'
+    th = 'Regime'
+    th = 'Appraisal'
+    th = 'State'
+    th
+    th
+    th
+  - for admin_real_law in @admin_real_laws do
+    tr
+      td = admin_real_law.real_id
+      td = admin_real_law.name
+      td = admin_real_law.type
+      td = admin_real_law.number
+      td = admin_real_law.year
+      td = admin_real_law.proposition_date
+      td = admin_real_law.excerpt
+      td = admin_real_law.description
+      td = admin_real_law.regime
+      td = admin_real_law.appraisal
+      td = admin_real_law.state
+      td = link_to 'Show', admin_real_law_path(admin_real_law)
+      td = link_to 'Edit', edit_admin_real_law_path(admin_real_law)
+      td = link_to 'Destroy', admin_real_law_path(admin_real_law), method: :delete, data: { confirm: 'Are you sure?' }
+br
+= link_to 'New Real law', new_admin_real_law_path
