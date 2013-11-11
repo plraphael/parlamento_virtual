@@ -1,4 +1,4 @@
-.bsa.well.debug-area.hidden
+.bsa.well.debug-area
   span.debug.btn.btn-danger.btn-sm#debug-action
     | Debug
   .debug-area#debug-target
@@ -6,5 +6,10 @@
       - if defined? current_player and current_player
         | User: 
         = current_player.name 
+      br
+      | Poll Count: 
+      span#stream
+        strong
+          | 0
     #semaphor
     #footnotes_holder

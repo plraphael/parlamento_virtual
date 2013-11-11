@@ -3,25 +3,38 @@ if isLoggedIn
     if showBar
       #details-area
         .well.mission-title
-          span.glyphicon.glyphicon-remove-circle.close-button
+          span.glyphicon.glyphicon-remove-circle.close-button click=bar
           h1 Missões
         .missions-area
-          each missions
+          each activeMissions
             .mission-box
-            /= link-to emberUrl text
-            /= link-to url text
-            = mission_type
-            a href="" click=checkin 
-              = text 
-            = completed
-            br
+              h5
+                i class={ completed:done:next}
+                if isAction
+                  a href="#" click=check_in
+                    = text 
+                else
+                  a href=emberUrl
+                    = text 
+          | Missões Cumpridas
+          each completedMissions
+            .mission-box
+              h5
+                i class={ completed:done:next}
+                if isAction
+                  a href="#" click=check_in
+                    = text 
+                else
+                  a href=emberUrl
+                    = text 
     #menu-area
-      .well.game-area click=bar
+      .well.game-area.congressman click=bar
+        img.congressman src=photo
         = name
       .well.game-area click=missions
         h3.notify-menu
           span.glyphicon.glyphicon-briefcase
-          = missions.length          
+          = activeMissions.length
       .well.game-area
         h3.level-menu
           span.glyphicon.glyphicon-user
@@ -30,8 +43,3 @@ if isLoggedIn
       .well.game-area
         a.btn.btn-danger.btn-stretch click="logout"
           | Sair
-      
-      .well.game-area
-        <% if Rails.env.development? %>
-          #stream       
-        <% end %> 

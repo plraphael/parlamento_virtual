@@ -3,6 +3,7 @@ head
   title Virtualcongress
   = stylesheet_link_tag "application", media: "all"
   = csrf_meta_tags
+  = favicon_link_tag 'favicon.ico'
 body
   = render 'layouts/debug' if Rails.env.development?
   = yield

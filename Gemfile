@@ -50,7 +50,6 @@ gem 'uglifier', '>= 1.3.0'
 
 #Ember
 gem 'ember-rails'
-gem 'ember-source', '1.0.0'
 gem 'handlebars-source', '~> 1.0.12'
 gem 'handlebars_assets'
 gem 'sprockets'
@@ -61,7 +60,7 @@ gem 'active_model_serializers'
 gem 'mongoid', '~> 4', github: 'mongoid/mongoid'
 gem 'bson_ext'
 gem 'sqlite3'
-gem 'redis'
+#gem 'redis'
 
 #Gamification/Facebook
 gem 'gioco'

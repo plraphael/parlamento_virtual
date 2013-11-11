@@ -1,7 +1,20 @@
 @import "custom_bootstrap/variables";
 
-.state{
- 
+.friend{
+  margin-top: 45px;
+  margin-bottom: 45px;
+  .thumbnail{
+    border: 0;
+  }
+  img{
+    margin-left: none;
+    float:left;
+  }
+  .label.level{
+    position:relative;
+    left: -9px;
+    top: 37px;
+  }
 }
 
 .footer{
@@ -21,6 +34,13 @@
   color: @link-color;
 }
 
+.navmenu a{
+  color: @bsb-white;
+  font-size: 16px;
+  margin-top: 12px;
+  margin-right: 12px;
+}
+
 .law-box{
   border: 1px solid @bsb-gray;
   padding: 4px 0 0 0;
@@ -38,6 +58,7 @@
     font-weight: 700;
     font-size: 20px;
     height: 32px;
+    background-color: @gray-lighter;
   }
 
   .state{
@@ -46,12 +67,13 @@
     border: 1px solid @bsb-gray;
     padding: 4px;
     height: 38px;
-    width: 100px;
+    width: 250px;
     position: relative;
     top: -22px;
     z-index: 1;
     text-align: center;
-    background-color: @bsb-white;
+    background-color: @bsb-black;
+    color: white;
   } 
 
   .excerpt{

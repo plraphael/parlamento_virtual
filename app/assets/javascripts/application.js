@@ -34,5 +34,3 @@ Virtualcongress = Ember.Application.create({
 $("#debug-action").click(function(){
   $("#debug-target").slideToggle();
 });
-
-//$("#debug-target").slideToggle();

@@ -1,0 +1,47 @@
+h1 API
+p
+  | Através de nossa API, é possível obter dados e também interagir com o jogo através de outras aplicações.
+.row
+  .col-md-10
+    table.table.table-striped.table-hover
+      thead
+        tr
+          th URL
+          th Operação
+          th Descrição
+      tbody
+        tr
+          td
+            | /api/v1/laws
+          td GET
+          td Lista todas as proposições, incluindo resultados de votação.
+        tr
+          td
+            | /api/v1/laws/:id
+          td PUT
+          td Vota em uma proposição.
+        tr
+          td
+            | /api/v1/proposals
+          td POST
+          td Cria uma proposta de alteração.
+        tr
+          td
+            | /api/v1/proposals/:id
+          td PUT
+          td Vota em uma proposta de alteração.
+        tr
+          td
+            | /api/v1/friends
+          td GET
+          td Lista seus amigos com estatísticas (nível, pontos, etc).
+        tr
+          td
+            | /api/v1/players
+          td GET
+          td Informações sobre o seu parlamentar virtual.
+        tr
+          td
+            | /api/v1/missions
+          td GET
+          td Lista o andamento de suas missões.

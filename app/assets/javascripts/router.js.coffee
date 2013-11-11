@@ -2,12 +2,20 @@
 
 Virtualcongress.Router.map ()->
   @route 'game', {path: "/game"}
+  @route 'friends', {path: "/friends"}
+  @route 'api', {path: "/api"}  
   @resource 'laws', {path: "/"}
   @resource 'law', {path: "/law/:law_id"}
+
 
 Virtualcongress.WithUserRoute = Ember.Route.extend
   beforeModel: ->
     @controllerFor('game').getPlayer()
+
+Virtualcongress.FriendsRoute = Virtualcongress.WithUserRoute.extend
+  model: -> 
+    @get('store').find('friend')
+
 
 Virtualcongress.LawsRoute = Virtualcongress.WithUserRoute.extend
   model: -> 

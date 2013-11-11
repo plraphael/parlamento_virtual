@@ -1,4 +1,8 @@
 # Débito Técnico 
-* Callbacks de erro do login do facebook não são tratados.
-  * não só de erros, se o cara ja estiver conectado no facebook tambem
-* User message is missing some thing we do not really now how to do 
+- Long polling problema com a lista de missões
+- CSS (deslogados, e ajustes)
+- Checkin do outro dia
+- Panel for law
+- Media object for comments
+- Bug na geração das missões
+- Landing page

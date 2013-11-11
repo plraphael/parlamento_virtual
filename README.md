@@ -68,7 +68,7 @@ Em relação as caracteristicas técnicas do sistema, trabalhos futuros incluem 
 Como colaborar com o projeto 
 ----------------------------
 
-[TODO]
+Críticas, dúvidas e sugestões são bem-vindas. Para colaborar com o código, as instruções de instalação em um servidor estão no README da pasta catalog-kitchen.
 
 
 

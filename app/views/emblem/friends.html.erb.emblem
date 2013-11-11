@@ -1,0 +1,9 @@
+.row
+  each model
+    .col-sm-3.friend
+      .thumbnail
+        .label.label-danger.level
+          = level
+        img.author src=photo
+        = name
+            

@@ -1,3 +1,10 @@
+prodelopment:
+  adtapter: mongoid
+  sessions:
+    default:
+      database: virtual_congress
+      hosts:
+        - localhost:27017
 development:
   adtapter: mongoid
   sessions:

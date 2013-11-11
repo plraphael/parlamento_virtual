@@ -1,0 +1,5 @@
+wget http://builds.emberjs.com/beta/ember.prod.js -O vendor/assets/ember/production/ember.js
+wget http://builds.emberjs.com/beta/ember.js -O vendor/assets/ember/development/ember.js
+
+wget http://builds.emberjs.com/beta/ember-data.prod.js -O vendor/assets/ember/production/ember-data.js
+wget http://builds.emberjs.com/beta/ember-data.js -O vendor/assets/ember/development/ember-data.js

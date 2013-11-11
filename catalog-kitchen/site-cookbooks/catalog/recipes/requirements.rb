@@ -8,11 +8,12 @@
 # I think it's pretty straighforward.
 
 # this loops install our default packages that we defined in our attirubtes/default.rb .
+execute  "apt-get update; apt-get upgrade; apt-get clean"
 node.packages.each do |pkg|
   package pkg
 end
 
 # and here are all base recipes we'll run. most of the configuration for these take place 
 # in attributes/default.rb file
-%w( rvm::system runit nginx 
-    user::data_bag openssh fail2ban ).each { |recipe| include_recipe recipe }
+%w( user::data_bag rvm::user runit nginx 
+    openssh fail2ban ).each { |recipe| include_recipe recipe }

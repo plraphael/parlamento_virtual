@@ -9,9 +9,14 @@
 
 # sets the ruby version to be installed by RVM. note that I'm making a gemset for the rails application.
 default.rvm.default_ruby = "ruby-2.0.0-p247"
+default.rvm.user_installs = [
+  { 'user'          => 'rails',
+    'default_ruby'  => 'ruby-2.0.0-p247'
+  }
+]
 
 # some default packages we want to install
-default.packages = %w(vim git htop mongodb redis-server)
+default.packages = %w(vim git htop mongodb)
 
 # Users
 default.users = ['ubuntu', 'rails']

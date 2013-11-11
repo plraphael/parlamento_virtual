@@ -1,6 +1,9 @@
-.row
-  .col-sm-12
-    each menu
-      span.navmenu
-        a href=route class="btn btn-xs"
-          | {{title}}
+span.navmenu
+  each menu
+    a href=route class="btn btn-info btn-xs"
+      | {{title}}
+
+  unless controllers.game.isLoggedIn
+    a.btn.btn-danger.btn-xs click="login"
+      <%= image_tag "loader.gif", class: "loading" %>
+      | Eleja-se Parlamentar Virtual

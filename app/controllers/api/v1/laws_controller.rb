@@ -11,7 +11,6 @@ class Api::V1::LawsController < ApplicationController
     law = law.scoped_with(current_player).update_vote(post_params)
 
     event = "messages.law"
-    $redis.publish(event,{message: {message: "" , event: event}}.to_json)
 
     render json: law.scoped_with(current_player)
   end

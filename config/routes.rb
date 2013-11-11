@@ -10,7 +10,10 @@ Virtualcongress::Application.routes.draw do
     namespace :v1 do
       resources :posts
       resources :laws
+      get "players/checkin"
       resources :players
+      get 'friends' => "players#friends"
+
       resources :proposals
       resources :missions
       namespace :messenger do

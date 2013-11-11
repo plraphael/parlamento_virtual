@@ -1,6 +1,6 @@
-unless isLoggedIn
-  .game-box
-    a.btn.btn-danger click="login" 
-      <%= image_tag "loader.gif", class: "loading" %>
-      | Eleja-se Parlamentar Virtual
-    .well.game-area#stream
+/ unless controllers.game.isLoggedIn
+/   .game-box
+/     a.btn.btn-danger click="login" 
+/       <%= image_tag "loader.gif", class: "loading" %>
+/       | Eleja-se Parlamentar Virtual
+/     .well.game-area#stream

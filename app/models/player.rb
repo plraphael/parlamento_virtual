@@ -11,7 +11,7 @@ class Player
 
   has_many :proposals
 
-  embeds_many :missions
+  has_many :missions
 
   def json_id
     self._id.to_s
@@ -41,6 +41,7 @@ class Player
 
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
+      MissionGenerator.generate_first_missions(user) unless user.persisted?
       user.provider = auth.provider
       user.uid = auth.uid
       user.name = auth.info.name
@@ -57,5 +58,13 @@ class Player
 
   def photo
     "http://graph.facebook.com/#{uid}/picture?type=square"
+  end
+
+  def checkin
+    self.missions.where(mission_type: "check_in").order_by("created_at DESC").last.complete_mission(self)
+  end
+
+  def unpositioned_laws
+    Law.all - Law.find(missions.where(mission_type: "law_favor").map(:reference_id))
   end
 end

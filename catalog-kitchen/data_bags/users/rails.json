@@ -1,7 +1,9 @@
 {
   "id": "rails",
   "password": "$6$MzC3v/WI$564WogURneQEsJoL.JUHLCQmkPdLj8rbbuKKXFvkt15UjDq1EgaUo5HW6AqE.VxDqDAl3UYo.JouZRufer0Xx.",
+  "groups": ["sudo", "www-data"],
   "ssh_keys": [
-    "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA4Ywr8FgcKX8Tsc+uuY6hhn4SQbsHsUISo1hHyqgvhQajfiBQO9kPbPb1pPE2613dUWb9EG0Tze8qSMaBPv1DUSVbINuddRLwGdI84Y1XC4QPMy4XYF0LYVxakXJQ+tC/xo6yvwrzmfxbrtj46dxoGedUwtE0X4ME2s8cJZGHZsWsqnJTnofzHpGLZ+G2h7FqvM2koSLp+7czVwQHls/z1ztdUfWjPEMy28ubI6rweeNqoXXhKUG41Vw6h6AOM37IvWs/KdemXCaprwMxAbCNDJFMo79mjbhVedm8VUAAyhgKDTJZXTgNng9EVn8EkPnYgcKJFG9n3wRS7lTTTZQxZw== cadu@baryshnikov"
+    "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA4Ywr8FgcKX8Tsc+uuY6hhn4SQbsHsUISo1hHyqgvhQajfiBQO9kPbPb1pPE2613dUWb9EG0Tze8qSMaBPv1DUSVbINuddRLwGdI84Y1XC4QPMy4XYF0LYVxakXJQ+tC/xo6yvwrzmfxbrtj46dxoGedUwtE0X4ME2s8cJZGHZsWsqnJTnofzHpGLZ+G2h7FqvM2koSLp+7czVwQHls/z1ztdUfWjPEMy28ubI6rweeNqoXXhKUG41Vw6h6AOM37IvWs/KdemXCaprwMxAbCNDJFMo79mjbhVedm8VUAAyhgKDTJZXTgNng9EVn8EkPnYgcKJFG9n3wRS7lTTTZQxZw== cadu@baryshnikov",
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDK0JS3rT+qVxWmHE0EwTrNh548vc8v3HIV7350PZ8UXILLlZ63L3dTZHn9vvb0UR2Y/HYQ9qEfpcQccxYpdC8hK231H9/tyVeSYjMZlPx1VyLcFIRc8XRkSTdbE1M6umlm98VlcbsTUnxZVNbK2lJ/rkSCZrIItBvgcJIEr0Uln2jtjKjQJwLtxjQt3G0MDNV+/lg1z9ouTBeXHoBBvt453ioSGifP67wl93erMTfSEtflLz8G+vNIEAuGcYFHjEa98lBS1cJI/Jury59qtzkxwcLqlViJRDOfLemOrvl5oestNigr7yH5xtTlOZQkxPbEcKTJ1m+xnbJx5javhrPR /Users/fabsn/.ssh/github_rsa"
   ]
 }

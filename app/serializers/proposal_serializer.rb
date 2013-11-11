@@ -1,7 +1,7 @@
 class ProposalSerializer < ActiveModel::Serializer
   embed :ids
 
-  attributes :id, :description, :author_name, :author_image
+  attributes :id, :description, :author_name, :author_image, :updated_at, :favor, :votes
 
   # https://github.com/rails-api/active_model_serializers#associations
   has_one :law, embed_key: :json_id
@@ -20,15 +20,10 @@ class ProposalSerializer < ActiveModel::Serializer
   end
 
   def author_name
-    player.name
+    player.name if player
   end
 
   def author_image
-    player.photo
-  end
-
-  # TODO (consider author vote)
-  def favor
-    1
+    player.photo if player
   end
 end

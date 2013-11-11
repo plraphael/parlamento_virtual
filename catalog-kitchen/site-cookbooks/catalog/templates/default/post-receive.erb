@@ -1,0 +1,22 @@
+#!/bin/bash -l
+
+TREE='<%= @workingTree %>'
+
+cd $TREE || exit
+unset GIT_DIR
+git reset --hard
+git pull
+git reset --hard
+
+echo '[INFO] Running bundle...'
+bundle >/dev/null
+echo '[INFO] Cleaning assets...'
+rake assets:clean >/dev/null
+echo '[INFO] Precompiling assets...'
+rake assets:precompile >/dev/null 2>&1
+if test -f '<%= @pidFile %>'; then
+  echo '[INFO] Reloading puma (phased restart)...'
+  <%= @pumaPhasedRestart %>
+fi
+
+date +%F\ %T  >~/last_deploy.txt

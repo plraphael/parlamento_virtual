@@ -1,6 +1,5 @@
 each model
   .mission-box
-  /= link-to emberUrl text
   = mission_type
   = completed
   br

@@ -48,26 +48,11 @@ class Law
 
     actual_vote = player_vote
     if actual_vote == nil
-      actual_vote = Vote.new(vote_attributes.merge({player_id: player.id}))
-      self.votes << actual_vote
-
-      points = Point.points_for_vote_action(player)
-      Event.create_vote_update_event(self.id, player.id, points)
-
-      # verify if there is a "favor" mission
-      #complete_mission_if_associated(player, "Law Favor")
+      vote_for_law(vote_attributes,player)
 
     elsif actual_vote.defined == 0
-      actual_vote.update(vote_attributes)
-      if actual_vote.defined == 1
-        points = Point.points_for_defining_vote(player)
-        Event.create_vote_define_event(self.id, player.id, points)
-
-        # verify if there is a "define" mission
-        #complete_mission_if_associated(player, "Law Define")
-      end
+      define_vote_for_law(vote_attributes,actual_vote,player)
     else
-      # Can't change a defined vote. But i will accept while debugging
       actual_vote.destroy if Rails.env.development?
     end
     self
@@ -78,13 +63,30 @@ class Law
     nil
   end
 
-  def complete_mission_if_associated(player, type)
-    mission = player.missions.where(mission_type: type, reference_id: self.id).first
-    unless mission.completed
-      mission.complete_mission(player)
+  def vote_for_law(vote_attributes,player)
+    actual_vote = Vote.new(vote_attributes.merge({player_id: player.id}))
+    self.votes << actual_vote
+
+    points = Point.points_for_vote_action(player)
+    Event.create_vote_update_event(self.id, player.id, points)
+
+    complete_mission_if_associated(player, "law_favor")
+  end
+
+  def define_vote_for_law(vote_attributes,actual_vote,player)
+    actual_vote.update(vote_attributes)
+    if actual_vote.defined == 1
+      points = Point.points_for_defining_vote(player)
+      Event.create_vote_define_event(self.id, player.id, points)
+
+      complete_mission_if_associated(player, "law_define")
     end
-    if type == "Law Favor"
-      MissionGenerator.generate_define_law_mission(player, self)
+  end
+
+  def complete_mission_if_associated(player, type)
+    missions = player.missions.where(mission_type: type, reference_id: self.id)
+    unless missions.empty?
+      missions.first.complete_mission(player)
     end
   end
 end

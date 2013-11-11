@@ -9,27 +9,53 @@ article.row
         summary
           p
             = excerpt
-        details
-          p 
-            = description
-      author
-        | Who is your author??
-      .proposals
         p
-          h3
-            i.next
-            | Proponha uma modificação
-        form.proposition submit="propose"
-          .form-group
-            Ember.TextArea valueBinding="new_proposal_message"  classNames="form-control"
-            input type="submit" class={ :btn :btn-primary :propose_action} value="Propor minha modificação"
-        each proposal in proposals
+          details
+            = description
+        p
+          | Autor(es): 
+          span.author
+            = authors
+      .proposals
+        if controllers.game.isLoggedIn
           p
-            img src=proposal.author_image
-            strong
-              = proposal.author_name
-            br
-            = proposal.description
+            h3
+              i.edit
+              | Proponha uma modificação
+          form.proposition submit="propose"
+            .form-group
+              Ember.TextArea valueBinding="new_proposal_message" classNames="form-control"
+              input type="submit" class={ :btn :btn-primary :propose_action} value="Propor minha modificação"
+        else
+          p
+        .clearfix
+
+        h3
+          | Propostas
+        each proposal in proposals
+          .proposal.row
+            .col-sm-2
+              img.author src=proposal.author_image
+            .col-sm-7
+              p
+                strong
+                  = proposal.author_name
+                  ' 
+                ' (
+                = format-date proposal.updated_at
+                '  )
+              p
+                = proposal.description
+              p
+            .col-sm-3
+              span class={ :label proposal.isFor:label-success:label-default } click="voteProposalFor proposal.id"
+                i.glyphicon.glyphicon-thumbs-up
+              span.number
+                = proposal.votes
+              span class={ :label proposal.isAgainst:label-danger:label-default } click="voteProposalAgainst proposal.id"
+                i.glyphicon.glyphicon-thumbs-down
+
+            
   .col-sm-4
     .state.action-box
       h2

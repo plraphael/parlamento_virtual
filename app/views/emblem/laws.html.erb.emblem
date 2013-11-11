@@ -9,12 +9,16 @@ each model
       .col-sm-8
         .excerpt
           = excerpt
+          br
+          br
+          | Autor: 
+          = authors
       .col-sm-4
         = partial vote_count
     .row.status-contents
       .col-sm-8
         span.events 
-          | ({{ playerState }})
+          
       .col-sm-4
         span.action
-          = linkTo "law" this classNames="btn btn-primary btn-sm" | Participar
+          = linkTo "law" this classNames="btn btn-info btn-sm" | Participar

@@ -5,7 +5,16 @@ class ApplicationController < ActionController::Base
   private
 
   def current_player
-    @current_player ||= Player.find(session[:player_id]) if session[:player_id]
+    if session[:player_id]
+      players = Player.where(id: session[:player_id]) 
+      if players.count > 0
+        @current_player = players.first 
+      else
+        @current_player = nil
+        session[:player_id] = nil
+      end
+    end
+    @current_player
   end
   helper_method :current_player
 end

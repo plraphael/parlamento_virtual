@@ -1,11 +1,11 @@
 upstream puma {
-  server unix:/var/run/<%= @server_name %>/puma.sock fail_timeout=0;
+  server unix:<%= @socket %> fail_timeout=0;
 }
 
 server {
   listen 80;
   server_name '<%= @server_name %>';
-  root /home/rails/www/<%= @server_name %>/public;
+  root <%= @root %>;
   # set far-future expiration headers on static content
   expires max;
 

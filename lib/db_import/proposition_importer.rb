@@ -35,11 +35,14 @@ class PropositionImporter
   def import_law(type, number, year)
     url = "http://www.camara.gov.br/SitCamaraWS/Proposicoes.asmx/ListarProposicoes?sigla=#{type}&numero=#{number}&ano=#{year}&datApresentacaoIni=&datApresentacaoFim=&autor=&parteNomeAutor=&siglaPartidoAutor=&siglaUFAutor=&generoAutor=&codEstado=&codOrgaoEstado=&emTramitacao="
 
+    law = nil
     begin
-      import_url(url)
+      law = import_url(url)
     rescue OpenURI::HTTPError
       puts "Nothing found."
     end
+
+    law
   end
 
   private
@@ -57,6 +60,7 @@ class PropositionImporter
 
   def import_url(url)
     xml = Nokogiri::XML(open(url))
+    law = nil
     xml.xpath('//proposicao').each do |node|
       law = parse_law(node)
 
@@ -72,6 +76,8 @@ class PropositionImporter
 
       law.save
     end
+
+    law
   end
 
   def parse_law(node)
